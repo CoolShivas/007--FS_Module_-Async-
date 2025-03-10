@@ -67,34 +67,72 @@ const fileName = "asyncText.txt";
 
 
 
-const readingFile = fs.readFile(fileName, "utf-8",(err, data) => {
-    if(err)
-    {
+// const readingFile = fs.readFile(fileName, "utf-8",(err, data) => {
+//     if(err)
+//     {
+//         console.error(err);
+//     }
+//     else
+//     {
+//         console.log(data);
+//     }
+// });
+// console.log(readingFile);
+
+// // // Here, we are getting the Output on Terminal as :- 
+// // // undefined
+// // // Making the FS Module Async file.
+
+// /**
+//  *
+//  * fs.readFile() :- Reads the contents of a file asynchronously and returns the data as a buffer or string.
+//  *
+//  * // ! syntax : fs.readFile(path, options, callback)
+//  *
+//  * // ? path : File path to read from.
+//  *
+//  * // ? options : Optional. An object or string specifying the encoding ('utf8') or flag ('r' for reading).
+//  *
+//  * // ? callback : A function with parameters (err, data).
+//  *
+//  */
+
+
+/////////************************************************************************************** */
+////----------------------------------------------------------------------------------------------
+/////////************************************************************************************** */
+
+
+
+
+const updateFile = fs.appendFile(
+    fileName,
+    "\nNew line is added with the help of appendFile.",
+    "utf-8",
+    (err) => {
+      if (err) {
         console.error(err);
+      } else {
+        console.log("File Updated Successfully");
+      }
     }
-    else
-    {
-        console.log(data);
-    }
-});
-console.log(readingFile);
+  );
+  console.log(updateFile);
 
-// // Here, we are getting the Output on Terminal as :- 
-// // undefined
-// // Making the FS Module Async file.
+ // // // Here, we are getting the Output on Terminal as :- 
+ // // // undefined
+ // // // File Updated Successfully
+ // // // Therefore, new line added on the file named as asyncText.txt i.e,(New line is added with the help of appendFile.).
 
-/**
- *
- * fs.readFile() :- Reads the contents of a file asynchronously and returns the data as a buffer or string.
- *
- * // ! syntax : fs.readFile(path, options, callback)
- *
- * // ? path : File path to read from.
- *
- * // ? options : Optional. An object or string specifying the encoding ('utf8') or flag ('r' for reading).
- *
- * // ? callback : A function with parameters (err, data).
- *
+ 
+
+ /**
+ * 
+ * fs.appendFile() :- Appends data to a file. If the file doesn't exit, it is created.
+ * 
+ * // ! syntax : fs.appendFile(path, data, options, callback).
+ * 
+ * 
  */
 
 
