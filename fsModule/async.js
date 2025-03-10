@@ -105,36 +105,68 @@ const fileName = "asyncText.txt";
 
 
 
-const updateFile = fs.appendFile(
-    fileName,
-    "\nNew line is added with the help of appendFile.",
-    "utf-8",
-    (err) => {
-      if (err) {
+// const updateFile = fs.appendFile(
+//     fileName,
+//     "\nNew line is added with the help of appendFile.",
+//     "utf-8",
+//     (err) => {
+//       if (err) {
+//         console.error(err);
+//       } else {
+//         console.log("File Updated Successfully");
+//       }
+//     }
+//   );
+//   console.log(updateFile);
+
+//  // // // Here, we are getting the Output on Terminal as :- 
+//  // // // undefined
+//  // // // File Updated Successfully
+//  // // // Therefore, new line added on the file named as asyncText.txt i.e,(New line is added with the help of appendFile.).
+
+
+
+//  /**
+//  * 
+//  * fs.appendFile() :- Appends data to a file. If the file doesn't exit, it is created.
+//  * 
+//  * // ! syntax : fs.appendFile(path, data, options, callback).
+//  * 
+//  * 
+//  */
+
+
+// /////////************************************************************************************** */
+// ////----------------------------------------------------------------------------------------------
+// /////////************************************************************************************** */
+
+
+
+const deleteFile = fs.unlink(fileName, (err) => {
+    if(err)
+    {
         console.error(err);
-      } else {
-        console.log("File Updated Successfully");
-      }
     }
-  );
-  console.log(updateFile);
+    else
+    {
+        console.log("File Deleted Successfully");
+    }
+})
+console.log(deleteFile);
 
  // // // Here, we are getting the Output on Terminal as :- 
  // // // undefined
- // // // File Updated Successfully
- // // // Therefore, new line added on the file named as asyncText.txt i.e,(New line is added with the help of appendFile.).
+ // // // File Deleted Successfully
+ // // // Therefore, file named as asyncText.txt is deleted now.
 
- 
 
- /**
+ /***
  * 
- * fs.appendFile() :- Appends data to a file. If the file doesn't exit, it is created.
+ * fs.unlink() :- Deletes a file asynchronoulsy.
  * 
- * // ! syntax : fs.appendFile(path, data, options, callback).
- * 
+ * // ! syntax : fs.unlink(path, callback).
  * 
  */
-
 
 /////////************************************************************************************** */
 ////----------------------------------------------------------------------------------------------
